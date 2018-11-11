@@ -1,6 +1,6 @@
 function checkCashRegister(price, cash, cid) {
     var expectedChange = Math.round((cash * 100) - (price * 100));
-    console.log(expectedChange/100);
+
     var cidObj = cid.map(function(x) {
         return {
             currency: x[0],
@@ -8,7 +8,7 @@ function checkCashRegister(price, cash, cid) {
             total: Math.round(x[1] * 100)
         }
     }).reverse();
-    console.log(cid);
+
     var remainder = expectedChange;
     var changeArray = [];
      for (let i = 0; i < cidObj.length; i++) {
@@ -48,12 +48,8 @@ function checkCashRegister(price, cash, cid) {
             });
     }
     
-
-    
-
     // Here is your change, ma'am.
-    //  console.log("expectedChange", expectedChange);
-    //  console.log("cashInDrawer",cidValue);
+
     return changeObj;
   }
 
